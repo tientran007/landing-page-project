@@ -1,0 +1,483 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    text-rendering: optimizeLegibility;
+}
+body{
+    overflow-x: hidden;
+}
+/* ----------------------------Header------------------------------------------------- */
+.logo{
+    width:200px;
+    height:200px;
+    float: left;
+    margin-left:60px;
+    margin-bottom: 70px;
+    margin-top: 40px;
+    
+}
+
+.main-nav{
+    float: right;
+    /* Loại bỏ dấu chấm mặc định khi tạo danh sách li */
+    list-style: none;
+    margin-right: 60px;
+    margin-top: 80px;
+}
+.main-nav li{
+    /* Cho danh sách cùng nằm trên một hàng */
+    display: inline-block;
+    margin-right: 30px;
+}
+.main-nav li a{
+    /* Xóa bỏ đường gạch chân khi tạo list */
+    text-decoration: none;
+    color: white;
+    font: size 110%;
+    font-weight: 700;
+    
+}
+.main-nav li :hover{
+    border-bottom: 2px solid coral;
+    color: #ff9f31;
+
+}
+.main-nav li :active{
+    color: coral;
+}
+/* class clearfix dùng để ngăn chặn sự ảnh hưởng của các element khi dùng float */
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+header{
+    /* Chèn ảnh vào website */
+    /* liner-gradent()  dùng liner-gradient(a,b) để trộn hai màu a và b  */
+    background-image: linear-gradient(to right top,rgba(142, 202, 230, 0.6),rgb(2, 48, 71)), url("../image/background3.jpg");
+    background-repeat: no-repeat;
+    /* chỉnh sửa kích thước ảnh phù hợp nhất với thẻ chứa ảnh */
+    background-size: cover;
+    /* Căn chỉnh bức ảnh nền về vị trí trung tâm */
+    background-position: center;
+    /* chỉnh sửa chiều cao của ảnh theo vh(view hight) */
+    height: 100vh; 
+    /* Cố định ảnh nền khi cuộn trang */
+    background-attachment:fixed ;    
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.heading-main-box{
+    position: absolute;
+    transform: translate(-50% -60%);
+}
+h1{
+    /* Chuyển toàn bộ chữ thành chữ viết hoa */
+    text-transform: uppercase;
+    font-size: 200%;
+    /* Chỉnh độ đậm nhạt của chữ */
+    font-weight: 150%;
+    /* Chỉnh khoảng cách giữa các chữ */
+    letter-spacing: 1px;
+    /* Chỉnh khoảng cách giữa các từ */
+    word-spacing: 4px;
+     /* Chỉnh khoảng cách giữa các dòng */
+    line-height: 120%;
+    color: white;
+    margin-bottom: 27px;
+}
+.btn{
+     font-size: 90%;
+     text-decoration: none ;
+     color: white;
+     background-color:#ffa703;
+     padding: 15px 30px;
+     border-radius: 25px;
+     margin-right: 18px;
+     display: inline-block;
+     width: 160px;
+     text-align: center;
+    } 
+ .btn:hover{
+    background-color:#fb8500;
+ }      
+ .btn:active{
+    background-color: #dd7600de;
+ }
+ /* -----------------------------About section -------------------------------------- */
+h2{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    text-align: center;
+    color: orangered;
+    font-size: 150%;
+    font-weight: 250%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+h2::after{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 2px;
+    background-color: rgba(238, 96, 2, 0.4);
+    margin: 0 auto;
+    
+}
+.p-about{
+    text-align: center;
+    font-weight: 200%;
+    color: rgb(2, 48, 71);
+    font-size: 20px;
+    padding-bottom: 45px;
+    line-height: 140%;
+}
+.about-picture img{
+    width:250px;
+    height:300px;
+    border: rgb(255, 102, 1) solid 5px;
+    border-radius:15px;
+    /* box-shadow dùng để tạo một hình mờ nằm dưới element */
+    box-shadow: 0px 0px 0px 0px #ffaa2a;
+    /* Chỉnh thời gian thực hiện của element chậm lại theo giây */
+    transition: all 0.6s;
+   
+    
+}
+.about-picture{
+    position: relative;
+}
+.picture-title{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    transform: translate(-60%, 100%);
+  /* opacity chỉnh độ mờ của element 0-1 */
+    opacity: 0;
+    font-weight: 600;
+    transition: 1s;
+}
+.about-picture img:hover{
+    /* filter tạo nên lớp phủ nằm phía trên ảnh brightness là độ sáng blur là độ mờ */
+    filter: brightness(65%) blur(1.5px);
+
+}
+.about-picture:hover .picture-title {
+    transform: translate(-60%, -50%);
+    opacity: 1;
+}
+.about-section{
+    height: 100vh;
+}
+.web-name{
+    color: rgb(224, 60, 0);
+}
+/* ----------------------------------------Products Section---------------------------------------- */
+h2{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.products-section{
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+.product-box{
+    background-color: #023047;
+    width: 340px;
+    height:360px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 20px 5px #a2a3a3;
+    margin-top: 10px;   
+     
+   
+
+}
+h3{
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-color: #219ebc;
+    text-align: center;
+    color: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.product-price{
+    color: aliceblue;
+    font-size: 130%;
+    text-align: center;
+    font-weight: 600;
+}
+.product-price span{
+    font-size: 80%;
+}
+.product-box ul li{
+    text-align: left;
+    font-size: 80%;
+    margin-left:5%;
+    line-height: 30px;
+    font-weight: 700;
+    word-spacing: 1px;
+    list-style: none;
+    color: rgb(238, 107, 0);
+    margin-top: 15px;
+}
+.small-icon{
+   color: aqua;
+   font-size: 120%;
+   margin-right: 8px;
+}
+.product-box .btn{
+    margin-left:27%;
+    margin-top: 30px;
+
+}
+.p-products{
+    text-align: center;
+    font-weight: 200%;
+    color: rgb(2, 48, 71);
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 140%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* ---------------------------------------Feed back----------------------------------------- */
+
+.feedback-section{
+    background-image:  linear-gradient(to right top,rgba(50, 175, 233, 0.8),rgb(2, 48, 71)), url("../image/backgroundfeedback.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.feedback-section h2{
+    margin-bottom: 40px;
+}
+.p-feedback{
+    text-align: center;
+    font-weight: 200%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-bottom: 60px;
+    line-height: 140%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+blockquote{
+    font-style: italic;
+    line-height: 140%;
+    position: relative;
+    color: whitesmoke;
+    margin: 0 auto;
+
+}
+blockquote::before{
+    content: "\0022";
+    display: block;
+    font-size: 350%;
+    position: absolute;
+    top: -12px;
+    left: -10px;
+
+    
+}
+cite img{
+    width:60px ;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ec8a1a;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+cite{
+    display: block;
+    margin-top: 20px;
+    color: #90dafc;
+    font-size: 16px;
+   
+}
+/* -------------------------------------------Donors--------------------------------------------- */
+
+.donors-section{
+background-color: rgb(240, 240, 240);
+height: 100vh;
+}
+
+.donors-showcase{
+     margin-left:9%;
+
+}
+.donors-showcase li{
+    list-style: none;
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+.donors-logo{
+    width: 150px;
+    height: 120px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+figcaption{
+    color: teal;
+    font-weight: 550;
+    margin-top: 10px;
+}
+.donors-showcase li .donors-logo:hover{
+    /* Sử dụng transform:scale() trong hover để phóng to hình ảnh lên khi di chuột, kết hợp với transition để có
+    hiệu ứng đẹp nhất */
+    transform: scale(1.2);
+    /* cursor: dùng để hiện thị con trỏ chuột khi di chuột vào elements */
+    cursor: pointer;
+}
+.p-donors{
+    text-align: center;
+    font-weight: 200%;
+    color: rgb(0, 0, 0);
+    font-size: 26px;
+    margin-bottom: 30px;
+    line-height: 140%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/* ------------------------------------Contact form--------------------------------------- */
+.contact-section{
+    background-image: linear-gradient(to right top,rgba(50, 175, 233, 0.3),rgb(2, 48, 71)), url(../image/form-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 90vh;
+    
+    
+}
+.information{
+    list-style: none;
+    color: white;
+    line-height: 45px;
+    margin-top: 50px;
+    word-spacing: 1px;
+    font-size: 90%;
+    margin-right:-50px;
+}
+.information .small-icon{
+    color: turquoise;
+    transition: all 0.6s;
+}
+.information .small-icon:hover{
+    transform: scale(1.2);
+}
+.social-icons li{
+          margin-top: 50px;
+          display: inline-block;   
+          font-size: 200%;
+          margin-left: 25px;
+          color: rgb(253, 253, 253);
+          transition: all 0.6s;
+}      
+
+.social-icons li:hover{
+    transform: scale(1.3);
+    color: turquoise;
+    cursor: pointer;
+}
+/* ------------------------------------Form----------------------Ơ\--------------------- */
+form{
+    margin-left:40%;
+    background-color: rgba(0, 0, 0, .4);
+    width: 440px;
+    height: 350px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+
+    
+}
+form .row{
+    margin-bottom: 15px;
+}
+label{
+    font-size: 100%;
+    color: white;
+    padding: 14px;
+    font-weight: 600;
+  
+    
+  
+}
+input, textarea{
+    outline: none;
+    padding: 10px;
+    background-color: rgba(59, 59, 59, .3);
+    border: 1px solid rgba(59, 59, 59, .6);
+    margin-left:10px;
+    border-radius: 7px;
+    font-size: 80%;
+    color: white;
+
+}
+input{
+    
+    height: 50px;
+}    
+input[type="submit"]{
+        font-size: 100%;
+        font-weight: 600;
+        border-radius: 5px;
+}
+input[type="text"] textarea{
+    width: 300px;
+    
+}
+textarea{
+    resize: none;
+    height: 100px;
+}
+form .row:last-child{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+   
+}
+
+
+
+ /* ----------------------------------Footer--------------------------------------------- */
+ footer{
+     text-align: center;
+     background-color: #5e5e5e;
+     color: white;
+     font-weight: 600;
+     padding-top: 8px;
+     padding-bottom: 10px;
+     font-style: italic;
+ }
